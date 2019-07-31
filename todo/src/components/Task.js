@@ -1,12 +1,26 @@
 import React from 'react';
+import { completed } from '../actions';
 
 
-const Task = props => {
+class Task extends React.Component {
+    constructor(props){
+        super(props);
+    }
 
-    
+
+
+
+callCompleteAction = e => {
+    const index = e.target.id;
+    completed(parseInt(index));
+}
+
+render(){
+
     return (
-     <p>{props.task.value}</p>
+     <p onClick={this.callCompleteAction} id={`${this.props.task.id}`}>{this.props.task.value}</p>
     );
   }
+}
 
 export default Task;

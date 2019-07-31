@@ -11,7 +11,7 @@ class TodoList extends React.Component {
                 newTask : ''
         }
 
-        addTask = e => {
+        callAddAction = e => {
             e.preventDefault();
             this.props.addTask(this.state.newTask);
         }
@@ -34,7 +34,7 @@ class TodoList extends React.Component {
 
                 
                 <input onChange={this.handleChanges} value={this.state.newTask}/>
-                <button onClick={this.addTask}>Add Task</button>
+                <button onClick={this.callAddAction}>Add Task</button>
             </div>
             );
         }
